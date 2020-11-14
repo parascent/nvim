@@ -39,6 +39,7 @@ set scrolloff=8
 set foldmethod=indent
 set nofoldenable
 set wrap
+set autoread
 set inccommand=split
 set mousefocus
 
@@ -108,12 +109,18 @@ Plug 'easymotion/vim-easymotion'
 Plug 'preservim/tagbar'
 Plug 'Yggdroot/indentLine'
 Plug 'inkarkat/vim-ReplaceWithRegister'
-Plug '/tpope/vim-abolish'
+Plug 'tpope/vim-abolish'
 Plug 'posva/vim-vue'
+Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 
 "highlightedyank
 let g:highlightedyank_highlight_duration = -1
+"confortable scroll
+let g:comfortable_motion_scroll_down_key = "j"
+let g:comfortable_motion_scroll_up_key = "k"
+noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
+noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
 
 "autosave
 " autocmd CursorHold * update
